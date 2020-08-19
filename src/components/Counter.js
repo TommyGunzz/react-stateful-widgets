@@ -46,9 +46,24 @@ STEP 6:
   This click handler needs to use 'setCount' to set the 'count' to be zero again.
 */
 
-import React from 'react'; /* STEP 0 */
+import React, { useState } from 'react'; /* STEP 0 */
 
 export default function Counter() {
+  const number = 0;
+  let [count, setCount] = useState(number);
+  console.log("count: ", count);
+  console.log("setCount: ", setCount); 
+  
+  const updateCount = () => {
+    // this line makes a var equal to 1 + counter
+    let countUpdate = count++;
+    // this updates count to countUpdate
+    // it should increment by 1 each time
+    setCount(countUpdate);
+  };
+
+
+
   /* STEP 1 */
 
   const increment = () => {
